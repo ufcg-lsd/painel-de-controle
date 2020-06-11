@@ -1,9 +1,10 @@
 const express = require('express');
 
+// Importação de Controllers
+const AlunoController = require('./controller/AlunoController');
+
 const routes = express.Router();
 
-routes.get('/', (req, res) => {
-  return res.json({ first: 'commit' });
-});
+routes.post('/alunos', AlunoController.store);
 
 module.exports = routes;
