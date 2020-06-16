@@ -2,10 +2,9 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('alunos', {
+    return queryInterface.createTable('aluno_vinculos', { 
       id: {
         type: Sequelize.INTEGER,
-        primaryKey: true,
         autoIncrement: true,
         allowNull: false,
       },
@@ -14,27 +13,12 @@ module.exports = {
         primaryKey: true,
         allowNull: false,
       },
-      nome: {
-        type: Sequelize.STRING,
+      matricula_vinculo: {
+        type: Sequelize.STRING(9),
+        primaryKey: true,
         allowNull: false,
       },
-      semestre_situacao: {
-        type: Sequelize.STRING(6),
-        allowNull: false,
-      },
-      semestre_ingresso: {
-        type: Sequelize.STRING(6),
-        allowNull: false,
-      },
-      ano_nascimento: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-      },
-      ano_conclusao_ensino_medio: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-      },
-      email: {
+      periodo_evasao: {
         type: Sequelize.STRING,
         allowNull: false,
       },
@@ -50,6 +34,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('alunos');
+    return queryInterface.dropTable('aluno_vinculos');
   }
 };
