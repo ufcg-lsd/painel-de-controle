@@ -2,14 +2,14 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('SituacaoAluno', { 
+    return queryInterface.createTable('EstadoCivil', { 
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false,
       },
-      descricao_situacao: {
+      estado_civil: {
         type: Sequelize.STRING,
         allowNull: false,
         unique: true,
@@ -22,10 +22,12 @@ module.exports = {
         type: Sequelize.DATE,
         allowNull: false,
       }
+    }, {
+      tableName: 'civil_state',
     });
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('SituacaoAluno');
+    return queryInterface.dropTable('EstadoCivil');
   }
 };

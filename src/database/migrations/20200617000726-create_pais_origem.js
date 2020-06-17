@@ -2,15 +2,15 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('SituacaoAluno', { 
+    return queryInterface.createTable('PaisOrigem', { 
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false,
       },
-      descricao_situacao: {
-        type: Sequelize.STRING,
+      país_origem: {
+        type: Sequelize.STRING(30),
         allowNull: false,
         unique: true,
       },
@@ -26,6 +26,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('SituacaoAluno');
+    return queryInterface.dropTable('PaisOrigem');
   }
 };

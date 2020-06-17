@@ -10,6 +10,11 @@ class AlunoVinculo extends Model {
       sequelize: connection,
     });
   }
+
+  static associate(models) {
+    this.belongsTo(models.Curso, { foreignKey: 'id_curso', as: 'curso-id' });
+    this.belongsTo(models.SituacaoVinculo, { foreignKey: 'id_situacao_vinculo', as: 'sit-vinc-id' });
+  }
 }
 
 module.exports = AlunoVinculo;
