@@ -7,6 +7,7 @@ class Municipio extends Model {
       estado: DataTypes.STRING,
     }, {
       sequelize: connection,
+      timestamps: false,
     });
   }
 }

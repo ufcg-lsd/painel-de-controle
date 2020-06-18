@@ -6,6 +6,7 @@ class Nacionalidade extends Model {
       nacionalidade: DataTypes.STRING,
     }, {
       sequelize: connection,
+      timestamps: false,
     });
   }
 }

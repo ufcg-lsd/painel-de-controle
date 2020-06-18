@@ -6,6 +6,7 @@ class Cota extends Model {
       descricao_cota: DataTypes.STRING,
     }, {
       sequelize: connection,
+      timestamps: false,
     });
   }
 }

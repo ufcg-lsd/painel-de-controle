@@ -8,6 +8,7 @@ class AlunoVinculo extends Model {
       periodo_evasao: DataTypes.STRING,
     }, {
       sequelize: connection,
+      timestamps: false,
     });
   }
 

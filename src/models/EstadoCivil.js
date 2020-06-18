@@ -6,6 +6,7 @@ class EstadoCivil extends Model {
       estado_civil: DataTypes.STRING,
     }, {
       sequelize: connection,
+      timestamps: false,
     });
   }
 }

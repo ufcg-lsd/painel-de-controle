@@ -6,6 +6,7 @@ class Sexo extends Model {
       sexo: DataTypes.STRING,
     }, {
       sequelize: connection,
+      timestamps: false,
     });
   }
 }

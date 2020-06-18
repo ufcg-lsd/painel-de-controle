@@ -6,6 +6,7 @@ class Escola extends Model {
       nome_escola: DataTypes.STRING,
     }, {
       sequelize: connection,
+      timestamps: false,
     });
   }
 }

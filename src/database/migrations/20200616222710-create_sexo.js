@@ -10,18 +10,10 @@ module.exports = {
         allowNull: false,
       },
       sexo: {
-        type: Sequelize.STRING(1),
+        type: Sequelize.STRING(10),
         allowNull: false,
         unique: true,
       },
-      created_at: {
-        type: Sequelize.DATE,
-        allowNull: false,
-      },
-      updated_at: {
-        type: Sequelize.DATE,
-        allowNull: false,
-      }
     });
   },
 

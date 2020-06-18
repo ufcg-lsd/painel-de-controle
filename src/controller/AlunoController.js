@@ -4,7 +4,6 @@ module.exports = {
   async store(req, res) {
     const { 
       cpf,
-      nome,
       semestre_situacao,
       semestre_ingresso,
       ano_nascimento,
@@ -14,7 +13,6 @@ module.exports = {
 
     const aluno = await Aluno.create({
       cpf,
-      nome,
       semestre_situacao,
       semestre_ingresso,
       ano_nascimento,

@@ -6,6 +6,7 @@ class SituacaoAluno extends Model {
       descricao_situacao: DataTypes.STRING,
     }, {
       sequelize: connection,
+      timestamps: false,
     })
   }
 } 

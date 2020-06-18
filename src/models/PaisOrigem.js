@@ -6,6 +6,7 @@ class PaisOrigem extends Model {
       país_origem: DataTypes.STRING,
     }, {
       sequelize: connection,
+      timestamps: false,
     });
   }
 }

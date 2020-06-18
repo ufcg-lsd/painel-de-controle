@@ -6,6 +6,7 @@ class Ingresso extends Model {
       descricao_ingresso: DataTypes.STRING,
     }, {
       sequelize: connection,
+      timestamps: false,
     });
   }
 }

@@ -7,6 +7,7 @@ class Curso extends Model {
       nome_curso: DataTypes.STRING,
     }, {
       sequelize: connection,
+      timestamps: false,
     });
   }
 }

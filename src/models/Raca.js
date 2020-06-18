@@ -6,6 +6,7 @@ class Raca extends Model {
       raça: DataTypes.STRING,
     }, {
       sequelize: connection,
+      timestamps: false,
     });
   }
 }
