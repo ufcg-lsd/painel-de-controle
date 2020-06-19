@@ -9,6 +9,10 @@ class SituacaoVinculo extends Model {
       timestamps: false,
     });
   }
+
+  static associate(models) {
+    this.hasOne(models.AlunoVinculo, { foreignKey: 'id_situacao_vinculo', as: 'sit_vinc' });
+  }
 }
 
 module.exports = SituacaoVinculo;

@@ -33,4 +33,7 @@ routes.post('/alunos-vinculos', AlunoVinculoController.store);
 routes.post('/curso', CursoController.store);
 routes.post('/situacao-vinculo', SituacaoVinculoController.store);
 
+// rota para teste de vinculo de aluno
+routes.get('/alunos-vinculos/:id_aluno_vinc/:id_curso/:id_sit_vinc', AlunoVinculoController.index);
+
 module.exports = routes;
