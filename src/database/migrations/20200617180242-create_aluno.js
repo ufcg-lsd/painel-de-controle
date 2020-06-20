@@ -3,11 +3,6 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('Aluno', {
-      id: {
-        type: Sequelize.INTEGER,
-        autoIncrement: true,
-        allowNull: false,
-      },
       cpf: {
         type: Sequelize.STRING(11),
         primaryKey: true,
@@ -41,7 +36,7 @@ module.exports = {
       },
       id_cota: {
         type: Sequelize.INTEGER,
-        allowNull: true,
+        allowNull: false,
         references: { model: 'Cota', key: 'id' },
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
@@ -64,6 +59,9 @@ module.exports = {
       id_sexo: {
         type: Sequelize.INTEGER,
         allowNull: false,
+        references: { model: 'Sexo', key: 'id' },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
       },
       id_estado_civil: {
         type: Sequelize.INTEGER,

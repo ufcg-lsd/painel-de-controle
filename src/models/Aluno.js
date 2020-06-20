@@ -3,7 +3,10 @@ const { Model, DataTypes } = require('sequelize');
 class Aluno extends Model {
   static init(connection) {
     super.init({
-      cpf: DataTypes.STRING,
+      cpf: {
+        type: DataTypes.STRING,
+        primaryKey: true,
+      },
       semestre_situacao: DataTypes.STRING,
       semestre_ingresso: DataTypes.STRING,
       ano_nascimento: DataTypes.INTEGER,
