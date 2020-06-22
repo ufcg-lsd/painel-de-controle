@@ -15,6 +15,7 @@ const MunicipioController = require('./controller/MunicipioController');
 const RacaController = require('./controller/RacaController');
 const CursoController = require('./controller/CursoController');
 const SituacaoVinculoController = require('./controller/SituacaoVinculoController');
+const DeficienciaController = require('./controller/DeficienciaController');
 
 const routes = express.Router();
 
@@ -32,6 +33,8 @@ routes.post('/municipio', MunicipioController.store);
 routes.post('/raca', RacaController.store);
 routes.post('/curso', CursoController.store);
 routes.post('/situacao-vinculo', SituacaoVinculoController.store);
+
+routes.post('/deficiencia', DeficienciaController.store);
 
 // rota para teste de vinculo de aluno e aluno
 routes.get('/alunos-vinculos/:cpf/:id_curso/:id_sit_vinc', AlunoVinculoController.index);
