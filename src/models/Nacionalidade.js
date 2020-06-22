@@ -9,6 +9,10 @@ class Nacionalidade extends Model {
       timestamps: false,
     });
   }
+
+  static associate(models) {
+    this.hasOne(models.Aluno, { foreignKey: 'id_nacionalidade', as: 'nacionalidade-aluno' });
+  }
 }
 
 module.exports = Nacionalidade;

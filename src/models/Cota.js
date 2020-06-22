@@ -9,6 +9,10 @@ class Cota extends Model {
       timestamps: false,
     });
   }
+
+  static associate(models) {
+    this.hasOne(models.Aluno, { foreignKey: 'id_cota', as: 'cota-aluno' });
+  }
 }
 
 module.exports = Cota;

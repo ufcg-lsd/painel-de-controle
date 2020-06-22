@@ -9,6 +9,10 @@ class Escola extends Model {
       timestamps: false,
     });
   }
+
+  static associate(models) {
+    this.hasOne(models.Aluno, { foreignKey: 'id_tipo_escola', as: 'escola-aluno' })
+  }
 }
 
 module.exports = Escola;

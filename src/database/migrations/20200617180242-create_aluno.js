@@ -16,7 +16,7 @@ module.exports = {
         onDelete: 'CASCADE',
       },
       semestre_situacao: {
-        type: Sequelize.STRING(6),
+        type: Sequelize.STRING(20),
         allowNull: false,
       },
       id_ingresso: {

@@ -9,6 +9,10 @@ class EstadoCivil extends Model {
       timestamps: false,
     });
   }
+
+  static associate(models) {
+    this.hasOne(models.Aluno, { foreignKey: 'id_estado_civil', as: 'estado-civil-aluno' });
+  }
 }
 
 module.exports = EstadoCivil;

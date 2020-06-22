@@ -15,7 +15,7 @@ class Curso extends Model {
   }
 
   static associate(models) {
-    this.hasOne(models.AlunoVinculo, { foreignKey: 'id_curso', as: 'curso' });
+    this.hasOne(models.AlunoVinculo, { foreignKey: 'id_curso', as: 'curso-vinculo' });
   }
 }
 

@@ -39,5 +39,6 @@ Curso.init(connection);
 SituacaoVinculo.init(connection);
 
 AlunoVinculo.associate(connection.models);
+Aluno.associate(connection.models);
 
 module.exports = connection;

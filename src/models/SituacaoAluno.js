@@ -9,6 +9,10 @@ class SituacaoAluno extends Model {
       timestamps: false,
     })
   }
+
+  static associate(models) {
+    this.hasOne(models.Aluno, { foreignKey: 'id_situacao', as: 'situacao-aluno' });
+  }
 } 
 
 module.exports = SituacaoAluno;

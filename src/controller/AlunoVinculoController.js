@@ -25,13 +25,11 @@ module.exports = {
 
   async index(req, res) {
     const { 
-      id_aluno_vinc,
+      cpf,
       id_curso, 
       id_sit_vinc } = req.params;
     
-    const curso = await Curso.findOne({
-      where: { codigo_curso: id_curso }
-    });
+    const curso = await Curso.findByPk(id_curso);
 
     const sit_vinc = await SituacaoVinculo.findByPk(id_sit_vinc);
 
@@ -39,9 +37,9 @@ module.exports = {
       return res.status(400).json({ error: 'course or link situation does not exists' })
     }
 
-    const aluno_vinculo = await AlunoVinculo.findByPk(id_aluno_vinc, {
-      include: { association: 'sit-vinc' },
-      attributes: ['id', 'cpf', 'matricula_vinculo', 'id_situacao_vinculo', 'periodo_evasao']
+    const aluno_vinculo = await AlunoVinculo.findByPk(cpf, {
+      include: { association: 'aluno' },
+      attributes: ['cpf', 'matricula_vinculo', 'id_curso', 'id_situacao_vinculo', 'periodo_evasao']
     });
 
     if (!aluno_vinculo) {

@@ -11,7 +11,7 @@ class SituacaoVinculo extends Model {
   }
 
   static associate(models) {
-    this.hasOne(models.AlunoVinculo, { foreignKey: 'id_situacao_vinculo', as: 'sit_vinc' });
+    this.hasOne(models.AlunoVinculo, { foreignKey: 'id_situacao_vinculo', as: 'situacao_vinculo' });
   }
 }
 
