@@ -14,6 +14,10 @@ class Deficiencia extends Model {
       timestamps: false,
     });
   }
+
+  static associate(models) {
+    this.belongsToMany(models.Aluno, { foreignKey: 'codigo_deficiencia', through: 'AlunoDeficiencia', as: 'deficiencia-alunos' });
+  }
 }
 
 module.exports = Deficiencia;

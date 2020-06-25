@@ -16,6 +16,7 @@ const RacaController = require('./controller/RacaController');
 const CursoController = require('./controller/CursoController');
 const SituacaoVinculoController = require('./controller/SituacaoVinculoController');
 const DeficienciaController = require('./controller/DeficienciaController');
+const AlunoDeficienciaController = require('./controller/AlunoDeficienciaController');
 
 const routes = express.Router();
 
@@ -34,13 +35,22 @@ routes.post('/raca', RacaController.store);
 routes.post('/curso', CursoController.store);
 routes.post('/situacao-vinculo', SituacaoVinculoController.store);
 
-routes.post('/deficiencia', DeficienciaController.store);
+// cadastro de deficiência
+routes.post('/deficiencias', DeficienciaController.store);
 
-// rota para teste de vinculo de aluno e aluno
-routes.get('/alunos-vinculos/:cpf/:id_curso/:id_sit_vinc', AlunoVinculoController.index);
-routes.get('/alunos/:cpf', AlunoController.index);
+// listar deficiência específica por id
+routes.get('/deficiencias/:id_deficiencia', DeficienciaController.show);
 
-// remoção de um aluno
+// cadastrar relacionamento da tabelas aluno e deficiência
+routes.post('/aluno-deficiencias/:id_deficiencia', AlunoDeficienciaController.store);
+
+// rota para teste de vinculo de aluno
+routes.get('/alunos-vinculos/:id_curso/:id_sit_vinc', AlunoVinculoController.show);
+
+// listagem de aluno específico por cpf
+routes.get('/alunos/:cpf', AlunoController.show);
+
+// remoção de um aluno específico por cpf
 routes.delete('/alunos/:cpf', AlunoController.remove);
 
 // listagem por consulta sql

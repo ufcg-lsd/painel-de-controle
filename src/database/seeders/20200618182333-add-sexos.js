@@ -3,12 +3,8 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('Sexo', [
-      {
-        sexo: 'Feminino',
-      },
-      {
-        sexo: 'Masculino',
-      }
+      { sexo: 'Feminino' },
+      { sexo: 'Masculino' }
     ], {});
   },
 

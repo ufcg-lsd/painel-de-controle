@@ -12,6 +12,7 @@ module.exports = {
       descricao_deficiencia: {
         type: Sequelize.STRING,
         allowNull: false,
+        unique: true,
       }
     });
   },

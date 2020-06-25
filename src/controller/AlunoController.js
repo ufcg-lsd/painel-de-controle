@@ -44,11 +44,12 @@ module.exports = {
     return res.json(aluno);
   },
 
-  async index(req, res) {
+  async show(req, res) {
     const { cpf } = req.params;
 
     const aluno = await Aluno.findByPk(cpf, {
-      include: { association: 'aluno' }
+      include: { association: 'aluno-deficiencias' },
+      where: { cpf_aluno: cpf }
     });
 
     if (!aluno) {
