@@ -6,7 +6,12 @@ class SituacaoVinculo extends Model {
       descricao_situacao: DataTypes.STRING,
     }, {
       sequelize: connection,
+      timestamps: false,
     });
+  }
+
+  static associate(models) {
+    this.hasOne(models.AlunoVinculo, { foreignKey: 'id_situacao_vinculo', as: 'situacao_vinculo' });
   }
 }
 

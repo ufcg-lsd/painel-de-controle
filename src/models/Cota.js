@@ -6,7 +6,12 @@ class Cota extends Model {
       descricao_cota: DataTypes.STRING,
     }, {
       sequelize: connection,
+      timestamps: false,
     });
+  }
+
+  static associate(models) {
+    this.hasOne(models.Aluno, { foreignKey: 'id_cota', as: 'cota-aluno' });
   }
 }
 

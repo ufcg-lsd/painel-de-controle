@@ -6,7 +6,12 @@ class Raca extends Model {
       raça: DataTypes.STRING,
     }, {
       sequelize: connection,
+      timestamps: false,
     });
+  }
+
+  static associate(models) {
+    this.hasOne(models.Raca, { foreignKey: 'id_raca', as: 'raca-aluno' });
   }
 }
 

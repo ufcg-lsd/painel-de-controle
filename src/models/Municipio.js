@@ -7,7 +7,12 @@ class Municipio extends Model {
       estado: DataTypes.STRING,
     }, {
       sequelize: connection,
+      timestamps: false,
     });
+  }
+
+  static associate(models) {
+    this.hasOne(models.Aluno, { foreignKey: 'id_naturalidade', as: 'naturalidade-aluno' });
   }
 }
 

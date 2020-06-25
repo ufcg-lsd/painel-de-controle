@@ -6,7 +6,12 @@ class EstadoCivil extends Model {
       estado_civil: DataTypes.STRING,
     }, {
       sequelize: connection,
+      timestamps: false,
     });
+  }
+
+  static associate(models) {
+    this.hasOne(models.Aluno, { foreignKey: 'id_estado_civil', as: 'estado-civil-aluno' });
   }
 }
 

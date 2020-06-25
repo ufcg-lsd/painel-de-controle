@@ -6,7 +6,12 @@ class Nacionalidade extends Model {
       nacionalidade: DataTypes.STRING,
     }, {
       sequelize: connection,
+      timestamps: false,
     });
+  }
+
+  static associate(models) {
+    this.hasOne(models.Aluno, { foreignKey: 'id_nacionalidade', as: 'nacionalidade-aluno' });
   }
 }
 
