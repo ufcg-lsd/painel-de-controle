@@ -1,12 +1,12 @@
-const Sexo = require('../models/Sexo');
+const Genero = require('../models/Genero');
 
 module.exports = {
   async store(req, res) {
     const {
-      sexo
+      genero
     } = req.body;
 
-    const sex = await Sexo.create({ sexo });
+    const sex = await Genero.create({ genero });
 
     return res.json(sex);
   }
