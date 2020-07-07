@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 
-class Sexo extends Model {
+class Genero extends Model {
   static init(connection) {
     super.init({
-      sexo: DataTypes.STRING,
+      genero: DataTypes.STRING,
     }, {
       sequelize: connection,
       timestamps: false,
@@ -11,8 +11,8 @@ class Sexo extends Model {
   }
 
   static associate(models) {
-    this.hasOne(models.Aluno, { foreignKey: 'id_sexo', as: 'sexo-aluno' });
+    this.hasOne(models.Aluno, { foreignKey: 'id_genero', as: 'genero-aluno' });
   }
 }
 
-module.exports = Sexo;
+module.exports = Genero;

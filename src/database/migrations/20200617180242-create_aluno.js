@@ -56,10 +56,10 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      id_sexo: {
+      id_genero: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        references: { model: 'Sexo', key: 'id' },
+        references: { model: 'Genero', key: 'id' },
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
       },

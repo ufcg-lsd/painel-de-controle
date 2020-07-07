@@ -2,14 +2,14 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Sexo', { 
+    return queryInterface.createTable('Genero', { 
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false,
       },
-      sexo: {
+      genero: {
         type: Sequelize.STRING(10),
         allowNull: false,
         unique: true,
@@ -18,6 +18,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Sexo');
+    return queryInterface.dropTable('Genero');
   }
 };
