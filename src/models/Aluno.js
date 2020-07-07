@@ -40,6 +40,7 @@ class Aluno extends Model {
     this.belongsTo(models.PaisOrigem, { foreignKey: 'id_pais_origem', as: 'pais-origem-aluno' });
     this.belongsTo(models.Municipio, { foreignKey: 'id_naturalidade', as: 'naturalidade-aluno' });
     this.belongsTo(models.Raca, { foreignKey: 'id_raca', as: 'raca-aluno' });
+    this.belongsToMany(models.Deficiencia, { foreignKey: 'cpf_aluno', through: 'AlunoDeficiencia', as: 'aluno-deficiencias' });
   }
 }
 

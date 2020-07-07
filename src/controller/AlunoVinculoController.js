@@ -23,9 +23,9 @@ module.exports = {
     return res.json(aluno_vinculo);
   },
 
-  async index(req, res) {
+  async show(req, res) {
+    const { cpf } = req.headers;
     const { 
-      cpf,
       id_curso, 
       id_sit_vinc } = req.params;
     

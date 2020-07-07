@@ -18,6 +18,8 @@ const Municipio = require('../models/Municipio');
 const Raca = require('../models/Raca');
 const Curso = require('../models/Curso');
 const SituacaoVinculo = require('../models/SituacaoVinculo');
+const Deficiencia = require('../models/Deficiencia');
+const AlunoDeficiencia = require('../models/AlunoDeficiencia');
 
 // Intância da conexão com o postgres através do sequelize
 const connection = new Sequelize(dbConfig);
@@ -37,8 +39,11 @@ Municipio.init(connection);
 Raca.init(connection)
 Curso.init(connection);
 SituacaoVinculo.init(connection);
+Deficiencia.init(connection);
+AlunoDeficiencia.init(connection);
 
 AlunoVinculo.associate(connection.models);
 Aluno.associate(connection.models);
+Deficiencia.associate(connection.models);
 
 module.exports = connection;
